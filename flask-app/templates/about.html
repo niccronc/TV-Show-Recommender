@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@3.2.1"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+
+</head>
+<body>
+<H1>About</H1>
+
+My name is Niccolo' Ronchetti.
+<br>
+This (work in progress) Flask app is a personal project, result of my passion for TV shows and NLP.
+<br>
+The main goal of this project is to see how good an unsupervised recommender system can become.
+<br>
+We scrape the <a href="https://imdb.com/"> IMDB </a> database for short synapses of TV shows (in English).
+<br>
+Then, we embed each one of those synapses into a high-dimensional vector, using an advanced NLP model.
+<br>
+We ask the user to enter a short description of waht they'd like to watch.
+The description is then embedded using the same NLP model, and compared with out offline database of embeddings.
+
+We then output the TV Shows having to the synapses most similar to the description entered by the user. 
+<br>
+<br>
+At the time of writing (July 2022), we are using off-the shelf Distilbert tokenizer and model from the <a href="https://huggingface.co/docs/transformers/v4.20.1/en/model_doc/distilbert"> Huggingface </a> library.
+
+<br>
+The notebooks, code and all accompanying information can be found at the link <a href="https://github.com/niccronc/TV-Show-Recommender"> https://github.com/niccronc/TV-Show-Recommender </a>
+
+    <form id='back_button' method='post' action='about' >
+      <p>
+    <input type='submit' value='Back' />
+      </p>
+    </form>
+
+</body>
+
+</html>
