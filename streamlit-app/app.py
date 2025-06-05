@@ -2,9 +2,10 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
-
+import os
 from transformers import DistilBertTokenizer, DistilBertModel
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
 model_name = 'distilbert-base-uncased'
 embedding_matrix_file_name = 'CLS_matrix.npy'
 index_to_name_file_name = 'index_to_name_dict.pickle'
@@ -22,8 +23,8 @@ def load_model():
 
 @st.cache_resource
 def load_embeddings():
-    embeddings = np.load(embedding_matrix_file_name)
-    with open(index_to_name_file_name, 'rb') as f:
+    embeddings = np.load(os.path.join(script_dir, embedding_matrix_file_name))
+    with open(os.path.join(script_dir, index_to_name_file_name), 'rb') as f:
         index_to_name_dict = pickle.load(f)
     return embeddings, index_to_name_dict
 
