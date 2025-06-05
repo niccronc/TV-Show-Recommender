@@ -1,0 +1,6 @@
+pandas
+numpy
+streamlit
+requests
+torch
+transformers
